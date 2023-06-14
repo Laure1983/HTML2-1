@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="myfunctions.js"></script>
+  <title>Spalvų keitimas</title>
+  <style>
+    #kvadratas {
+      width: 200px;
+      height: 200px;
+      background-color: #ccc;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-    <h2>Labas JS!</h2>
-    <p id="demo">Mano tekstas</p>
-    <button onclick="showAlert()" type="button">Hello!</button>
-    <button onclick="outputToConsole('Veikia antras mygtukas')" 
-        type="button">To console</button>
+  <div id="kvadratas"></div>
+  <button onclick="keistiSpalva()">Keisti spalvą</button>
 
+  <script src="script.js"></script>
 </body>
 </html>
