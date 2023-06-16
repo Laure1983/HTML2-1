@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spalvų keitimas</title>
+    <style>
+        #kvadratas {
+            width: 600px;
+            height: 600px;
+            background-color: #ccc;
+        }
+
+        #atsitiktineSpalva {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: rgba(238, 8, 8, 0.11);
+            color: #f70808be;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="kvadratas"></div>
+    <input type="range" min="0" max="360" value="0" id="slider" oninput="keistiSpalva()">
+    <button onclick="generuotiAtsitiktineSpalva()">Atsitiktine spalva</button>
+
+    <script>
+        function keistiSpalva() {
+            const kvadratas = document.getElementById("kvadratas");
+            let slider = document.getElementById("slider");
+            let hue = slider.value;
+            let spalva = "hsl(" + hue + ", 100%, 50%)";
+            kvadratas.style.backgroundColor = spalva;
+        }
+
+        function generuotiAtsitiktineSpalva() {
+            const kvadratas = document.getElementById("kvadratas");
+            let hue = Math.floor(Math.random() * 360);
+            let spalva = "hsl(" + hue + ", 100%, 50%)";
+            kvadratas.style.backgroundColor = spalva;
+            document.getElementById("slider").value = hue;
+        }
+    </script>
+</body>
+</html>

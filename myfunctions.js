@@ -5,5 +5,5 @@ function showAlert(){
 function outputToConsole(str){
     console.debug("outputToConsole got call");
     console.info(str);
-    
+
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skaiciuotuvas</title>
+    <style>
+        /* CSS stiliai cia */
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Skaiciuotuvas</h2>
+
+    <form id="skaiciuForma">
+        <label for="number1">Pirmas skaicius:</label>
+        <input type="number" id="number1" required>
+        <br>
+        <br>
+        <label for="number2">Antras skaicius:</label>
+        <input type="number" id="number2" required>
+        <br>
+        <br>
+        <label for="operation">Veiksmas:</label>
+        <select id="operation">
+            <option value="sudetis">Sudetis</option>
+            <option value="atimtis">Atimtis</option>
+            <option value="daugyba">Daugyba</option>
+            <option value="dalyba">Dalyba</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit">Skaiciuoti</button>
+    </form>
+    <br>
+    <br>
+
+    <table id="rezultatuLentele">
+        <tr>
+            <th>Pirmas skaicius</th>
+            <th>Antras skaicius</th>
+            <th>Veiksmas</th>
+            <th>Atsakymas</th>
+        </tr>
+    </table>
+
+    <script>
+        document.getElementById("skaiciuForma").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var number1 = parseFloat(document.getElementById("number1").value);
+            var number2 = parseFloat(document.getElementById("number2").value);
+            var operation = document.getElementById("operation").value;
+
+            var rezultatas;
+            var tekstas;
+            switch (operation) {
+                case "sudetis":
+                    rezultatas = number1 + number2;
+                    tekstas = "Suma:";
+                    break;
+                case "atimtis":
+                    rezultatas = number1 - number2;
+                    tekstas = "Skirtumas:";
+                    break;
+                case "daugyba":
+                    rezultatas = number1 * number2;
+                    tekstas = "Sandauga:";
+                    break;
+                case "dalyba":
+                    rezultatas = number1 / number2;
+                    tekstas = "Dalyba:";
+                    break;
+            }
+
+            var rezultatuLentele = document.getElementById("rezultatuLentele");
+            var newRow = rezultatuLentele.insertRow();
+
+            var cell1 = newRow.insertCell();
+            cell1.textContent = number1;
+
+            var cell2 = newRow.insertCell();
+            cell2.textContent = number2;
+
+            var cell3 = newRow.insertCell();
+            cell3.textContent = operation;
+
+            var cell4 = newRow.insertCell();
+            cell4.innerHTML = `<strong>${tekstas}</strong> ${rezultatas}`;
+        });
+    </script>
+</body>
+</html>

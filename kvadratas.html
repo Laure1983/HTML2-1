@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spalvų keitimas</title>
+    <style>
+        #kvadratas {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="kvadratas"></div>
+    <button onclick="keistiSpalva()">Keisti spalvą</button>
+
+    <script>
+        function keistiSpalva() {
+            var kvadratas = document.getElementById("kvadratas");
+            var spalvosKodas = generuotiAtsitiktineSpalva();
+            kvadratas.style.backgroundColor = spalvosKodas;
+        }
+
+        function generuotiAtsitiktineSpalva() {
+            var spalvosKodas = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            return spalvosKodas;
+        }
+    </script>
+</body>
+</html>
