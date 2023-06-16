@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programos pavyzdys</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .filter-input {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Žaidimas "Atspėk skaičių"</h2>
+        <p>Atspėkite skaičių nuo 1 iki 100:</p>
+        <input type="number" id="guess-input">
+        <button onclick="checkGuess()">Patikrinti</button>
+        <p id="guess-message"></p>
+
+        <h2>Paprastas todolist'as</h2>
+        <div class="form-group">
+            <input type="text" id="task-input">
+            <button onclick="addTask()">Pridėti</button>
+        </div>
+        <ul id="task-list"></ul>
+
+        <h2>Lentelė su informacija</h2>
+        <table id="info-table">
+            <tr>
+                <th>Vardas</th>
+                <th>Pavarde</th>
+                <th>Amžius</th>
+
+            </tr>
+        </table>
+
+        <h2>Elementų filtravimas</h2>
+        <input type="text" id="filter-input" placeholder="Įveskite tekstą">
+        <ul id="filter-list"></ul>
+    </div>
+    <script src = "mano.js"></script>
+</body>
+
+</html>
